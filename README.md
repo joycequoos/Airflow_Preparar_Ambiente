@@ -48,7 +48,7 @@ Para instalar o Airflow com Docker:
 
 Aguarde o término da instalação.
 
-📖 [Para saber mais sobre Docker](https://github.com/JosiTubaroski/Docker)
+📖 [Para saber mais sobre Docker](https://github.com/joycequoos/Docker)
 
 ### 2. Abrindo o prompt de comando na pasta do projeto
 
