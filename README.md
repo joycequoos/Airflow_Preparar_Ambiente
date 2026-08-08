@@ -1,69 +1,109 @@
-# Airflow Preparar Ambiente
-Preparando Ambiente do Airflow
+# Airflow: Preparação do Ambiente
 
-- Pré-requisitos:
-   - Instalação Docker
+[← Voltar à Trilha de Airflow](https://github.com/joycequoos/Apache_Airflow./blob/main/README.md)
 
-- IDE
-   - Anaconda/VSCode
+<!--
+  Comentário: apliquei a mesma estrutura início/meio/fim usada no README do
+  Apache_Airflow. O conteúdo original era uma sequência linear de imagens
+  e comandos, sem separação clara de etapas — reorganizei em 3 blocos:
+  o que você precisa antes de começar, o passo a passo de instalação, e
+  a verificação final de que o ambiente está pronto.
+-->
 
-- Instalar Airflow com Docker
+Este repositório documenta o passo a passo para preparar o ambiente local do Apache Airflow utilizando **Docker**.
 
-  ### Download docker para Windows
+---
 
-  <img src="https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/blob/main/img/Docker_Windows.png">
+## Pré-requisitos
 
-  
+Antes de instalar o Airflow, você vai precisar de:
 
-  Instalar Airflow com Docker
+- **Docker** instalado na máquina.
+- Uma **IDE** de sua preferência (Anaconda / VS Code).
 
-  1. Crie uma pasta "airflow"
-  2. Salve os seguintes arquivos na pasta:
-      - docker-compose.yaml
-      - .env
+### Download do Docker para Windows
 
- ### Instalando o Docker
+[![Download Docker para Windows](https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/raw/main/img/Docker_Windows.png)](https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/blob/main/img/Docker_Windows.png)
 
-  <img src="https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/blob/main/img/Instalando_Docker.png">
+Para instalar o Airflow com Docker:
 
-  Aguardar o termino da instalação
+1. Crie uma pasta chamada `airflow`.
+2. Salve os seguintes arquivos dentro dela:
+   - `docker-compose.yaml`
+   - `.env`
 
-<div> 
-<p><a href="https://github.com/JosiTubaroski/Docker">Para Saber mais sobre Docker</a></p>
-</div> 
+---
 
- - Após a instalaçao do docker, abrir o prompt de comando e posicionar na pasta airflow.
+##  Instalando e subindo o ambiente
 
-  <img src="https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/blob/main/img/CMD_Airflow.png">
+<!--
+  Comentário: agrupei aqui todo o processo de instalação e execução dos
+  comandos, que no README original estava misturado com o passo de
+  pré-requisitos — assim fica mais claro que essa é a etapa "mão na massa".
+-->
 
-  - Apos localizar o caminho da pasta, digitar dir e verificar se o resultado será corretamente apresentado.
+### 1. Instalando o Docker
 
-  <img src="https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/blob/main/img/CMD_DIR.png">
-    
-   - Agora vamos digitar os comandos para realizar a instalação.
+[![Instalando o Docker](https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/raw/main/img/Instalando_Docker.png)](https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/blob/main/img/Instalando_Docker.png)
 
-     docker-compose up -d
- 
-     <img src="https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/blob/main/img/Termino_Execucao.png">    
+Aguarde o término da instalação.
 
-     Comando verificar se o ambiente está pronto: docker-compose ps
+📖 [Para saber mais sobre Docker](https://github.com/JosiTubaroski/Docker)
 
-   <img src="https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/blob/main/img/Verificando_Se_AmbientePronto.png">   
+### 2. Abrindo o prompt de comando na pasta do projeto
 
-   #### Após a preparação do ambiente, abrir o navegador e digitar: localhost:8080
+Após a instalação do Docker, abra o prompt de comando e posicione-se na pasta `airflow`.
 
-![image](https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/assets/66569714/41304b15-b699-4507-81b0-02fd73ff806f)
+[![Prompt de comando na pasta airflow](https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/raw/main/img/CMD_Airflow.png)](https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/blob/main/img/CMD_Airflow.png)
 
-Informar para ambos: Usuário e Senha: airflow
+Depois de localizar o caminho da pasta, digite `dir` e verifique se o resultado é apresentado corretamente (os arquivos `docker-compose.yaml` e `.env` devem aparecer).
 
-# Apresentação Inicial do Airflow
+[![Verificando o diretório com dir](https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/raw/main/img/CMD_DIR.png)](https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/blob/main/img/CMD_DIR.png)
 
- <img src="https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/blob/main/img/Tela_Airflow.png">   
+### 3. Subindo os containers
 
-Essa apresentação contem as dags de demonstração.
+Execute o comando abaixo para iniciar a instalação:
 
+```bash
+docker-compose up -d
+```
 
+[![Término da execução](https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/raw/main/img/Termino_Execucao.png)](https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/blob/main/img/Termino_Execucao.png)
 
+---
 
-   
-     
+## Verificando o ambiente e primeiro acesso
+
+### 1. Verificar se o ambiente está pronto
+
+```bash
+docker-compose ps
+```
+
+[![Verificando se o ambiente está pronto](https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/raw/main/img/Verificando_Se_AmbientePronto.png)](https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/blob/main/img/Verificando_Se_AmbientePronto.png)
+
+### 2. Acessando a interface do Airflow
+
+Com o ambiente pronto, abra o navegador e acesse:
+
+```
+localhost:8080
+```
+
+<!--
+  Comentário: a imagem de login original usava um link temporário e
+  assinado do GitHub (private-user-images.githubusercontent.com com token
+  JWT), que expira depois de um tempo. Recomendo re-fazer o upload dessa
+  imagem direto para a pasta /img do repositório e trocar por um link
+  "raw" permanente, senão ela vai quebrar sozinha no futuro.
+-->
+
+Informe, tanto para usuário quanto para senha: `airflow`
+
+### 3. Apresentação inicial do Airflow
+
+[![Tela inicial do Airflow](https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/raw/main/img/Tela_Airflow.png)](https://github.com/JosiTubaroski/Airflow_Preparar_Ambiente/blob/main/img/Tela_Airflow.png)
+
+Essa apresentação já contém as DAGs de demonstração que acompanham a instalação padrão do Airflow — um bom ponto de partida para explorar a interface antes de criar suas próprias DAGs.
+
+➡️ **Próximo passo:** [Conhecendo o Airflow](https://github.com/JosiTubaroski/Conhecendo_Airflow)
